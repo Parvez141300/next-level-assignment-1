@@ -10,13 +10,17 @@ Ans: interface এবং types এর মাঝে কিছু পার্থ�
 
 Ans: keyof একটি TypeScript অপারেটর যা একটি object type-এর সব key এর union type রিটার্ন করে। নিম্নে এর উদাহরণ দেওয়া হলোঃ
 
-const Person = {
+interface Person {
     name: string;
     age: number;
     email: string;
 }
 
-// keyof Person creates: "name" | "age" | "email"
 type PersonKeys = keyof Person;
 
-const personInfo : 
+let key: PersonKeys;
+
+key = "name";    // valid
+key = "age";     // valid  
+key = "email";   // valid
+// key = "address"; // error: this property is not valid
