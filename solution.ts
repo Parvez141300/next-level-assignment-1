@@ -12,6 +12,8 @@ const formatValue = (value: formatValueInput): formatValueInput | undefined => {
     }
 }
 
+const formatValueOutput = formatValue("hello");
+
 
 
 
@@ -26,6 +28,9 @@ const getLength = (value: lengthInput): number | undefined => {
         return value.length;
     }
 }
+
+const getLengthOutput = getLength("typescript")
+
 
 
 
@@ -43,8 +48,11 @@ class Person {
     }
 }
 
-const person1 = new Person("Parvez", 25);
-// person1.getDetails()
+const person1 = new Person("John Doe", 30);
+
+
+
+
 
 type filterByRatingInput = { title: string, rating: number }[];
 
@@ -57,12 +65,20 @@ const filterByRating = (books: filterByRatingInput): filterByRatingInput | strin
 
     return newArray
 }
+
 const books = [
     { title: 'Book A', rating: 4.5 },
     { title: 'Book B', rating: 3.2 },
     { title: 'Book C', rating: 5.0 },
 ];
-// console.log(filterByRating(books));
+
+const filterByRatingOutput = filterByRating(books);
+
+
+
+
+
+
 
 type filterActiveUsersInput = { id: number, name: string, email: string, isActive: boolean }[];
 
@@ -76,7 +92,12 @@ const users = [
     { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
 
-// console.log(filterActiveUsers(users));
+const filterActiveUsersOutput = filterActiveUsers(users);
+
+
+
+
+
 
 
 interface Book {
@@ -98,7 +119,11 @@ const myBook: Book = {
     isAvailable: true,
 };
 
-// printBookDetails(myBook);
+printBookDetails(myBook);
+
+
+
+
 
 type getUniqueValuesInput = string[] | number[];
 
@@ -112,10 +137,13 @@ const getUniqueValues = (array1: getUniqueValuesInput, array2: getUniqueValuesIn
     }
     return newArray;
 }
-
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
-// console.log(getUniqueValues(array1, array2));
+const getUniqueValuesOutput = getUniqueValues(array1, array2);
+
+
+
+
 
 type calculateTotalPriceInput = {
     name: string;
@@ -124,18 +152,21 @@ type calculateTotalPriceInput = {
     discount?: number;
 }[];
 
-const calculateTotalPrice = (products: calculateTotalPriceInput) : number => {
+const calculateTotalPrice = (products: calculateTotalPriceInput): number => {
     const total = products.reduce((previousValue, currentProduct) => {
         let isAvailableDiscount: number = currentProduct.discount ? (100 - currentProduct.discount) / 100 : 1
         return (previousValue + (currentProduct.price * currentProduct.quantity * isAvailableDiscount))
     }, 0);
 
-    return total
+    return total;
 }
+
 const products = [
     { name: 'Pen', price: 10, quantity: 2 },
     { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
     { name: 'Bag', price: 50, quantity: 1, discount: 20 },
 ];
 
-// console.log(calculateTotalPrice(products));
+const calculateTotalPriceOutput = calculateTotalPrice(products);
+
+
