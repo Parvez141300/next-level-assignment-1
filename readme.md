@@ -20,8 +20,10 @@ type PersonKeys = keyof Person;
 
 let key: PersonKeys;
 
-key = "name";
-key = "age";
-key = "email";
-// in top keys are valid
+key = "name";//valid
+
+key = "age";//valid
+
+key = "email";//valid
+
 key = "address"; // error: this property is not valid
